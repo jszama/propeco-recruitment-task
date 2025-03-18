@@ -9,18 +9,20 @@ const apiClient = axios.create({
     },
 });
 
-export default async function getPropertyData(prevState: any, formData: FormData) {
+export default async function getPropertyData(prevState: RawData, formData: FormData) {
     const uprn = formData.get('uprn')?.toString();
-    if (!uprn) return;
+    if (!uprn) {
+        return { error: 'UPRN is required', data: null };
+    }
 
     try {
         const response = await apiClient.get(uprn);
-        return response.data;
+        return { data: response.data, error: null };
     } catch (error: unknown) {
         if (axios.isAxiosError(error)) {
-            throw new Error('Property not found');
+            return { error: 'Property not found', data: null };
         } else {
-            throw new Error('An unknown error occurred');
+            return { error: 'An unknown error occurred', data: null };
         }
     }
 };

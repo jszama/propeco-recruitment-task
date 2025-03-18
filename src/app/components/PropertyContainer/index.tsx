@@ -2,12 +2,18 @@
 import { useState } from 'react'
 import PropertyDataForm from './assets/__components/PropertyDataForm';
 import PropertyData from './assets/__components/PropertyData';
+import { RawData } from './assets/types';
 
 export default function PropertyContainer() {
-    const [rawPropertyData, setRawPropertyData] = useState(null);
+    const [rawPropertyData, setRawPropertyData] = useState<RawData>();
     const [isVisible, setIsVisible] = useState(true);
 
-    function handleSubmit(propertyData: any) {
+    function handleSubmit(propertyData: RawData | null) {
+        if (!propertyData) {
+            setRawPropertyData(undefined);
+            setIsVisible(true);
+            return;
+        }
         setIsVisible(false);
         setTimeout(() => {
             setRawPropertyData(propertyData);
