@@ -1,6 +1,6 @@
 import React from 'react'
 import DataContainer from './DataContainer';
-import { PropertyDataListProps } from '../../../types';
+import { PropertyDataListProps } from '@/app/lib/types';
 
 export default function PropertyDataList( { rawData }: PropertyDataListProps ) {
   return (

@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import PropertyDataForm from './assets/__components/PropertyDataForm';
 import PropertyData from './assets/__components/PropertyData';
-import { RawData } from './assets/types';
+import { RawData } from '@/app/lib/types';
 
 export default function PropertyContainer() {
     const [rawPropertyData, setRawPropertyData] = useState<RawData>();

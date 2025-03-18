@@ -1,8 +1,7 @@
 import React from 'react'
 import PropertyDataList from './assets/PropertyDataList'
 import Button from '../Button';
-import { PropertyDataProps } from '../../types';
-
+import { PropertyDataProps } from '@/app/lib/types';
 
 export default function PropertyData({ rawData, onSubmit }: PropertyDataProps) {
   return (

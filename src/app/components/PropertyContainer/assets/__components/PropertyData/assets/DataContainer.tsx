@@ -1,7 +1,7 @@
 import React from 'react'
 import DataHeader from './DataHeader'
 import ListItem from './ListItem';
-import { DataContainerProps, DataItem } from '../../../types';
+import { DataContainerProps, DataItem } from '@/app/lib/types';
 
 export default function DataContainer({ title, data }: DataContainerProps) {
   return (

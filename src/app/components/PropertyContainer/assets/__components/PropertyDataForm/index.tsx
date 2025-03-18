@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Form from 'next/form';
 import getPropertyData from './assets/getPropertyData';
 import Button from '../Button';
-import { RawData } from '../../types';
+import { RawData } from '@/app/lib/types';
 
 interface PropertyDataFormProps {
   onSubmit: (propertyData: RawData) => void;

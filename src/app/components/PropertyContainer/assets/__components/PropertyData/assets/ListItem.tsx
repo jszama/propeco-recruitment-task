@@ -1,5 +1,5 @@
 import React from 'react'
-import { ListItemProps } from '../../../types';
+import { ListItemProps } from '@/app/lib/types';
 
 
 export default function ListItem( { icon, title, value }: ListItemProps ) {

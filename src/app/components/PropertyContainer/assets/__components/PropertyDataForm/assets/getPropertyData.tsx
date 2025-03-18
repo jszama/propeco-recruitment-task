@@ -1,6 +1,6 @@
 'use server';
 import axios from 'axios';
-import { RawData } from '../../../types';
+import { RawData } from '@/app/lib/types';
 
 const apiClient = axios.create({
     baseURL: process.env.PROPECO_API_URL,
