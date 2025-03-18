@@ -56,7 +56,7 @@ export default function PropertyDataForm({ onSubmit }: PropertyDataFormProps) {
       <Button
         type="submit"
         text="Get Property Data"
-        onClick={() => {}}
+        onClick={() => {}} disabled={pending}
       />
       <h3 className="flex flex-row gap-1 items-end bottom-0 right-0 absolute">
         Powered by <a href='https://www.propeco.io/'><Image width={96} height={0} src="/logo.png" alt="Logo" /></a>

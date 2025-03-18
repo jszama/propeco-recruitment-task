@@ -12,7 +12,8 @@ export default function PropertyData({ rawData, onSubmit }: PropertyDataProps) {
       <Button
         type="button"
         text="Back to Search"
-        onClick={() => {onSubmit(null)}}
+        onClick={() => { onSubmit(null) }}
+        disabled={false}
       />
     </article>
   );
