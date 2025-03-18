@@ -1,6 +1,5 @@
 ### Improvements given more time
 - Display data as graphs/charts.
-- Enhance responsiveness for better mobile and tablet support.
-- Improve accessibility by adhering to WCAG guidelines.
-- Refine the color scheme and typography for better look.
-- Include a light/dark mode toggle for user preference.
+- For alphabetical ratings use bar with colour meter
+- Add maps view of locatiion
+- Extract most useful information to initial view, add more details button to see rest of details
