@@ -4,26 +4,30 @@ import Image from 'next/image';
 import Form from 'next/form';
 import getPropertyData from './assets/getPropertyData';
 import Button from '../Button';
+import { RawData } from '../../types';
 
 interface PropertyDataFormProps {
-  onSubmit: (propertyData: any) => void;
+  onSubmit: (propertyData: RawData) => void;
 }
 
 export default function PropertyDataForm({ onSubmit }: PropertyDataFormProps) {
-  const handleSubmit = async (prevState: any, formData: FormData) => {
+  const handleSubmit = async (state: RawData | null, formData: FormData): Promise<RawData | null> => {
     try {
-      const data = await getPropertyData(prevState, formData);
-      onSubmit(data);
-    } catch (error: unknown) {
-      if (error instanceof Error) {
-        setError(error.message || "Property not found");
-      } else {
-        setError("Unexpected error occurred");
+      const data = await getPropertyData(state || {} as RawData, formData);
+      if (data.error) {
+        setError(data.error);
+        return null;
       }
+      setError("");
+      onSubmit(data.data);
+      return data.data;
+    } catch {
+      setError("An unknown error occurred");
+      return null;
     }
   };
 
-  const [state, action, pending] = useActionState(handleSubmit, null);
+  const [, action, pending] = useActionState<RawData | null, FormData>(handleSubmit, null);
   const [error, setError] = useState("");
 
   return (

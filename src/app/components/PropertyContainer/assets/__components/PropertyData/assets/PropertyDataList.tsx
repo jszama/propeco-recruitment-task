@@ -1,9 +1,6 @@
 import React from 'react'
 import DataContainer from './DataContainer';
-
-interface PropertyDataListProps {
-    rawData: any;
-}
+import { PropertyDataListProps } from '../../../types';
 
 export default function PropertyDataList( { rawData }: PropertyDataListProps ) {
   return (

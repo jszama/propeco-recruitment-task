@@ -1,7 +1,7 @@
 import React from 'react'
 
 interface DataHeaderProps {
-    title: string;
+  title: string;
 }
 
 export default function DataHeader({ title }: DataHeaderProps) {

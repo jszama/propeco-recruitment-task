@@ -1,11 +1,8 @@
 import React from 'react'
 import PropertyDataList from './assets/PropertyDataList'
 import Button from '../Button';
+import { PropertyDataProps } from '../../types';
 
-interface PropertyDataProps {
-  rawData: any;
-  onSubmit: any;
-}
 
 export default function PropertyData({ rawData, onSubmit }: PropertyDataProps) {
   return (

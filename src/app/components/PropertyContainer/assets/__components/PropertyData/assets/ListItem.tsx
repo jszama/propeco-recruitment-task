@@ -1,10 +1,6 @@
 import React from 'react'
+import { ListItemProps } from '../../../types';
 
-interface ListItemProps {
-    icon: string;
-    title: string;
-    value: string;
-}
 
 export default function ListItem( { icon, title, value }: ListItemProps ) {
   return (
@@ -14,7 +10,7 @@ export default function ListItem( { icon, title, value }: ListItemProps ) {
         </div>
         <div className='flex flex-col'>
             <span className='font-bold text-sm text-gray-200'>{title}</span>
-            <span className='text-gray-400 text-xs'>{value || "N/A"}</span>
+            <span className='text-gray-400 text-xs'>{value}</span>
         </div>
     </li>
   )
